@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h1>Горячие и вкусные блюда</h1>
+<ul class="menu-items">
+    {% for thing in things %}
+    <li class="menu-item">
+        <div class="item-wrapper">
+            <img src="{{ thing.image.url }}" alt="{{ thing.name }}">
+            <div class="description">
+                <h2>{{ thing.name }}</h2>
+                <p>{{ thing.description }}</p>
+                <p><strong>Цена:</strong> {{ thing.price }} руб.</p>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

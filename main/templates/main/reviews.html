@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h1>Отзывы наших клиентов</h1>
+<ul>
+    {% for review in reviews %}
+    <li>
+        <h2>{{ review.title }}</h2>
+        <p>{{ review.body }}</p>
+        <p><strong>Оценка:</strong> {{ review.rating }}/5</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

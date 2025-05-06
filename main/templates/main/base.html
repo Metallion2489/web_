@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Горячая Штучка!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="logo">
+          <a href="{% url 'home' %}">
+            <img
+              src="{% static 'main/images/logo.png' %}"
+              alt="Hot Thing Logo"
+            />
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li><a href="{% url 'menu' %}">Наше меню</a></li>
+            <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+            <li><a href="{% url 'contact' %}">Контакты</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main class="main-content">{% block content %} {% endblock %}</main>
+      <footer>
+        <p>&copy; 2024 Горячая Штучка!</p>
+      </footer>
+    </div>
+  </body>
+</html>
